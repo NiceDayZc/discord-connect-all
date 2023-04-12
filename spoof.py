@@ -6,7 +6,7 @@ from time import sleep
 from httpx import get
 
 """
-@Remove remove if gay
+@Remove if gay
 @Author: github.com/NiceDayZc
 """
 

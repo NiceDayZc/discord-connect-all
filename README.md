@@ -8,7 +8,7 @@
   <h2 align="center">discord-connect-all</h2>
 
   <p align="center">
-    A simple and fast req spam (<b> created by me </b>)
+    A simple and fast spam connect(<b> created by me </b>)
     <br />
     <br />
     <a href="https://t.me/NicedayzXcs">🌌 Telegram</a>

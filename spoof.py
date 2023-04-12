@@ -24,7 +24,7 @@ def want_to_connect(tokens, server, channel, name):
         while True:
             ws = WebSocket()
             ws.connect("wss://gateway.discord.gg/?v=8&encoding=json")
-            ws.send(dumps({"op": 2, "d": {"token":tokens,"properties": {"os":"Windows","browser":"Chrome","device":"","system_locale":"en-US","os_version":"10"},"presence": want_random_presence(),"compress": False,}}))
+            ws.send(dumps({"op": 2,"d": {"token": tokens,"capabilities": 125,"properties": {"os": "iOS","browser": "Safari","device": "iPhone","system_locale": "en-US","browser_user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Mobile/15E148 Safari/604.1","browser_version": "15.1","os_version": "15.1","referrer": "","referring_domain": "","referrer_current": "","referring_domain_current": "","release_channel": "stable","client_build_number": 140268,"client_event_source": None,},"presence": {"status": "online","since": 0,"activities": [{"name": "Custom Status","type": 4,"state": "NiceDayZc Spammer","emoji": None,}],"afk": False,},"compress": False,"client_state": {"guild_hashes": {},"highest_last_message_id": "0","read_state_version": 0,"user_guild_settings_version": -1,"user_settings_version": -1,},},}))
             ws.send(dumps({"op": 4, "d": {"guild_id": server, "channel_id": channel, "self_mute": choice([True, False]),"self_deaf": choice([True, False]), "self_stream?": True, "self_video": False,}}))
             ws.send(dumps({"op": 18,"d": {"type": "guild","guild_id": server,"channel_id": channel,"preferred_region": "singapore"}}))
             print(F"connect {tokens} As #{channel} | {name}")

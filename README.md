@@ -31,3 +31,5 @@
 * Fast Speeds
 * Simple & Easy Configuration
 * Sexy WebSocket
+
+### 🤓 DONT SKID OR RESKIN MY CODE

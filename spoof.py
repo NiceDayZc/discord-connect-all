@@ -1,6 +1,6 @@
-from websocket import WebSocket
+from websocket import WebSocket # pip install websocket-client
 from threading import Thread
-from yaml import safe_load
+from yaml import safe_load # pip install pyyaml
 from random import choice
 from json import dumps
 from time import sleep

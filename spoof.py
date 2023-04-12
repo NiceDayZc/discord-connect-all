@@ -1,12 +1,14 @@
 from websocket import WebSocket
 from threading import Thread
+from yaml import safe_load
 from random import choice
 from json import dumps
 from time import sleep
 from httpx import get
 
+
 """
-@Remove if gay
+@Remove remove if gay
 @Author: github.com/NiceDayZc
 """
 
@@ -15,8 +17,7 @@ def want_channel_id_voice(tokens, server):
     return get_channel_id
 
 def want_random_presence():
-    return {"status":choice(["online","dnd","idle"]),"since":0,"activites":[],"afk":False}
-
+    return {"status": choice(["online","dnd","idle"]),"since":0,"activites":[],"afk":False}
 
 def want_to_connect(tokens, server, channel, name):
     try:
@@ -29,14 +30,13 @@ def want_to_connect(tokens, server, channel, name):
             print(F"connect {tokens} As #{channel} | {name}")
             sleep(0.1)
             #ws.send(dumps({"op": 5,"d":{"speaking": 1 ,"delay": 0,"ssrc": 0}})) #disconnect channel
-    except:
-        pass
+    except Exception as e:
+        print(e)
 
 if (__name__ == "__main__"):
     want_tokens = open("tokens.txt", 'r').read().splitlines()
-    tokens_want_channel = "" #main token // get channel id
-    server = "" #server id
-    for channel in want_channel_id_voice(tokens_want_channel, server):
+    config = safe_load(open("config.yml"))
+    for channel in want_channel_id_voice(config["setting"]["token"], config["setting"]["server"]):
         if (channel['type'] == 2):
             for tokens_connect in want_tokens:
-                Thread(target=want_to_connect,args=(tokens_connect, server, channel['id'], channel['name'],)).start()
+                Thread(target=want_to_connect,args=(tokens_connect, config["setting"]["server"], channel['id'], channel['name'],)).start()

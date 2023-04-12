@@ -1,3 +1,3 @@
 setting:
-  token  :  ""
-  server :  ""
+  token  :  "" #token for get channel
+  server :  "" #server id

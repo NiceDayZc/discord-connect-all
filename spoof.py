@@ -8,7 +8,7 @@ from httpx import get
 
 
 """
-@Remove remove if gay
+@remove if gay
 @Author: github.com/NiceDayZc
 """
 
